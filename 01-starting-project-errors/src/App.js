@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalList';
 import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
 import './App.css';
+import {v4 as uuidv4} from 'uuid';
+
+let myuuid = uuidv4();
 
 const App = () => {
   const [courseGoals, setCourseGoals] = useState([
@@ -10,10 +13,12 @@ const App = () => {
     { text: 'Finish the course!', id: 'g2' }
   ]);
 
+  console.log(courseGoals)
+
   const addGoalHandler = enteredText => {
     setCourseGoals(prevGoals => {
       const updatedGoals = [...prevGoals];
-      updatedGoals.unshift({ text: enteredText, id: 'goal1' });
+      updatedGoals.unshift({ text: enteredText, id: myuuid });
       return updatedGoals;
     });
   };
@@ -37,12 +42,14 @@ const App = () => {
 
   return (
 
-      <section id="goal-form">
-        <CourseInput onAddGoal={addGoalHandler} />
-      </section>
-      <section id="goals">
-        {content}
-      </section>
+      <>
+        <section id="goal-form">
+          <CourseInput onAddGoal={addGoalHandler}/>
+        </section>
+        <section id="goals">
+          {content}
+        </section>
+      </>
 
   );
 };
