@@ -1,8 +1,14 @@
 import classes from './MealsSummary.module.css';
+import Context from "../../store/cart-context";
+import { useContext } from "react";
 
 const MealsSummary = () => {
+    const {cartContext}=useContext(Context);
+    const isDark = cartContext.isThemeDark
+    const darkClasses=`${classes.summary} ${isDark ? classes.dark : ''}`;
+
     return (
-        <section className={classes.summary}>
+        <section className={darkClasses}>
             <h2>Delicious Food, Delivered To You</h2>
             <p>
                 Choose your favorite meal from our broad selection of available meals

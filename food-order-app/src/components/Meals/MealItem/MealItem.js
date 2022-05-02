@@ -15,7 +15,7 @@ const MealItem=({name, description, price, id}) => {
             price: price
         })
     }
-    console.log(cartContext.items)
+
     return (
         <li className={classes.meal}>
             <div>
