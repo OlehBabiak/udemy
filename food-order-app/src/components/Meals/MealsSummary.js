@@ -5,10 +5,10 @@ import { useContext } from "react";
 const MealsSummary = () => {
     const {cartContext}=useContext(Context);
     const isDark = cartContext.isThemeDark
-    const darkClasses=`${classes.summary} ${isDark ? classes.dark : ''}`;
+    const lightClasses=`${classes.summary} ${isDark ? classes.light : ''}`;
 
     return (
-        <section className={darkClasses}>
+        <section className={lightClasses}>
             <h2>Delicious Food, Delivered To You</h2>
             <p>
                 Choose your favorite meal from our broad selection of available meals

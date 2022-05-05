@@ -15,10 +15,6 @@ const HeaderCartButton=({onClick}) => {
 
     const btnClasses=`${classes.button} ${btnIsHighlighted ? classes.bump : ''}`;
 
-    const onChangeTheme = () => {
-        cartContext.changeTheme()
-    }
-
     useEffect(()=>{
         if(items.length === 0) {
             return;
@@ -35,9 +31,6 @@ const HeaderCartButton=({onClick}) => {
 
     return (
         <>
-            <button onClick={onChangeTheme} className={btnClasses}>
-                Change Theme
-            </button>
             <button onClick={onClick} className={btnClasses}>
            <span className={classes.icon}>
                 <CartIcon/>

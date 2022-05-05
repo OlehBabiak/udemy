@@ -10,11 +10,14 @@
     border-radius: 14px;
     padding: 1rem;
     box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 
-.dark {
-    background-color: #ba9595;
+.light {
+    background-color: #f1ebeb;
     color: #443b3b;
+    transition: 0.5s;
+    box-shadow: 0 1px 18px 10px rgba(33, 31, 31, 0.25);
 }
 
 .summary h2 {

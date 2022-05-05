@@ -21,6 +21,7 @@ const AddUser=({onAddUser}) => {
     e.preventDefault();
     initialUserObj.userName = nameInputRef.current.value;
     initialUserObj.userAge = ageInputRef.current.value;
+
     if(initialUserObj.userName.trim().length===0 || initialUserObj.userAge.trim().length===0) {
       setError({
         title: 'Invalid input',
