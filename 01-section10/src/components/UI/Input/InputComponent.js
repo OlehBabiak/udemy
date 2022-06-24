@@ -12,11 +12,7 @@ const InputComponent=({
 
                       }) => {
     return (
-        <div
-            className={`${classes.control} ${
-                isValid===false ? classes.invalid : ''
-            }`}
-        >
+        <div className={`${classes.control} ${isValid===false ? classes.invalid : ''}`}>
             <label htmlFor={id}>{label}</label>
             <input
                 type={id}
