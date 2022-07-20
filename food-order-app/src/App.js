@@ -1,9 +1,8 @@
 import Header from "./components/Layout/Header/Header";
 import { useState } from "react";
-import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
 import ContextProvider from "./store/ContextProvider.js";
-import HomePage from "./components/Layout/Home/HomePage";
+import RoutesComp from "./components/RoutesComp";
 
 function App () {
 
@@ -18,7 +17,7 @@ function App () {
             {cartIsVisible && <Cart onCloseCart={cartHandler}/>}
             <Header onShowCart={cartHandler}/>
             <main>
-                <HomePage/>
+                <RoutesComp/>
             </main>
         </ContextProvider>
     );
