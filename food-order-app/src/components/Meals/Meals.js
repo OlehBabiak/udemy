@@ -4,7 +4,7 @@ import AvailableMeals from "./AvailableMeals";
 import classes from './Meals.module.css'
 import Context from "../../store/cart-context";
 
-const Meals = () => {
+const Meals = ({menu}) => {
     const {cartContext}=useContext(Context);
     const isDark = cartContext.isThemeDark
     const lightClasses=`${classes.dark} ${isDark ? classes.light : ''}`;
@@ -13,7 +13,7 @@ const Meals = () => {
        <Fragment>
            <div className={lightClasses}>
                <MealsSummary/>
-               <AvailableMeals/>
+               <AvailableMeals menu={menu}/>
            </div>
        </Fragment>
     );

@@ -1,0 +1,107 @@
+{
+  "mac": [
+    {
+      "id": "m1",
+      "name": "Kasha",
+      "description": "Finest fish and veggies",
+      "price": 22.99
+    },
+    {
+      "id": "m2",
+      "name": "Gulash",
+      "description": "A german specialty!",
+      "price": 16.5
+    },
+    {
+      "id": "m3",
+      "name": "Makarony",
+      "description": "American, raw, meaty",
+      "price": 12.99
+    },
+    {
+      "id": "m4",
+      "name": "Golubci",
+      "description": "Healthy...and green...",
+      "price": 18.99
+    }
+  ],
+  "kfc": [
+    {
+      "id": "m1",
+      "name": "Potato",
+      "description": "Finest potato and souse",
+      "price": 15.66
+    },
+    {
+      "id": "m2",
+      "name": "Biff",
+      "description": "An american meat!",
+      "price": 18.3
+    },
+    {
+      "id": "m3",
+      "name": "King Burger",
+      "description": "New York, raw, meaty",
+      "price": 14.55
+    },
+    {
+      "id": "m4",
+      "name": "Salat",
+      "description": "Tasty...and green...",
+      "price": 11.55
+    }
+  ],
+
+  "big-burger": [
+    {
+      "id": "m1",
+      "name": "Holodec",
+      "description": "Finest potato and souse",
+      "price": 16.44
+    },
+    {
+      "id": "m2",
+      "name": "Krovianka",
+      "description": "An american meat!",
+      "price": 22.32
+    },
+    {
+      "id": "m3",
+      "name": "Salo z chasnykom",
+      "description": "New York, raw, meaty",
+      "price": 11.98
+    },
+    {
+      "id": "m4",
+      "name": "Solinnja",
+      "description": "Tasty...and green...",
+      "price": 17.55
+    }
+  ],
+  "tasty-burger": [
+    {
+      "id": "m1",
+      "name": "Shahlyk",
+      "description": "Finest potato and souse",
+      "price": 13.97
+    },
+    {
+      "id": "m2",
+      "name": "Hachapuri",
+      "description": "An american meat!",
+      "price": 21.85
+    },
+    {
+      "id": "m3",
+      "name": "Kebab",
+      "description": "New York, raw, meaty",
+      "price": 14.13
+    },
+    {
+      "id": "m4",
+      "name": "Lavash",
+      "description": "Tasty...and green...",
+      "price": 5.98
+    }
+  ]
+}
