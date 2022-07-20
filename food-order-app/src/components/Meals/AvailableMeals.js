@@ -1,8 +1,6 @@
 import classes from './AvailableMeals.module.css'
 import MealItem from "./MealItem/MealItem";
 import Card from "../UI/Card";
-import Context from "../../store/cart-context";
-import { useContext } from "react";
 
 const DUMMY_MEALS = [
     {
