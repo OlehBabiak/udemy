@@ -35,11 +35,14 @@ const Cart = ( {onCloseCart} ) => {
 		cartContext.addUserData(form)
 	}
 	
+	const localSetHandler = (order) => {
+		localStorage.setItem('order', JSON.stringify(order))
+	}
 	
 	const addData = () => {
 		const json = JSON.stringify(cartContext.order);
 		foodAppService.postRestOrder(json)
-			.then(res => console.log(res))
+			.then(localSetHandler)
 			.catch(err => console.error(err))
 		cartContext.clearState()
 		onCloseCart()
