@@ -3,10 +3,9 @@ import { forwardRef } from "react";
 
 const Input = forwardRef(({input, label}, ref) => {
     return (
-       <div className={classes.input}>
+       <div className={`${classes.input} ${input.style}`}>
            <label htmlFor={input.id}>{label}</label>
            <input ref={ref} {...input} />
-           {/*{...props.input} сюди передаєм всі параметри інпута*/}
        </div>
     );
 });

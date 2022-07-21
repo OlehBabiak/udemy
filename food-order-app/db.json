@@ -27,52 +27,51 @@
   ],
   "kfc": [
     {
-      "id": "m1",
+      "id": "k1",
       "name": "Potato",
       "description": "Finest potato and souse",
       "price": 15.66
     },
     {
-      "id": "m2",
+      "id": "k2",
       "name": "Biff",
       "description": "An american meat!",
       "price": 18.3
     },
     {
-      "id": "m3",
+      "id": "k3",
       "name": "King Burger",
       "description": "New York, raw, meaty",
       "price": 14.55
     },
     {
-      "id": "m4",
+      "id": "k4",
       "name": "Salat",
       "description": "Tasty...and green...",
       "price": 11.55
     }
   ],
-
   "big-burger": [
     {
-      "id": "m1",
+      "id": "b1",
       "name": "Holodec",
       "description": "Finest potato and souse",
       "price": 16.44
     },
     {
-      "id": "m2",
+      "id": "b2",
       "name": "Krovianka",
       "description": "An american meat!",
       "price": 22.32
     },
     {
-      "id": "m3",
+      "id": "b3",
       "name": "Salo z chasnykom",
       "description": "New York, raw, meaty",
       "price": 11.98
     },
     {
-      "id": "m4",
+      "id": "b4",
       "name": "Solinnja",
       "description": "Tasty...and green...",
       "price": 17.55
@@ -80,28 +79,472 @@
   ],
   "tasty-burger": [
     {
-      "id": "m1",
+      "id": "t1",
       "name": "Shahlyk",
       "description": "Finest potato and souse",
       "price": 13.97
     },
     {
-      "id": "m2",
+      "id": "t2",
       "name": "Hachapuri",
       "description": "An american meat!",
       "price": 21.85
     },
     {
-      "id": "m3",
+      "id": "t3",
       "name": "Kebab",
       "description": "New York, raw, meaty",
       "price": 14.13
     },
     {
-      "id": "m4",
+      "id": "t4",
       "name": "Lavash",
       "description": "Tasty...and green...",
       "price": 5.98
+    }
+  ],
+  "requests": [
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        }
+      ],
+      "totalAmount": 13.97,
+      "id": 1
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        }
+      ],
+      "totalAmount": 13.97,
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 1,
+          "price": 21.85
+        },
+        {
+          "id": "t4",
+          "name": "Lavash",
+          "amount": 1,
+          "price": 5.98
+        }
+      ],
+      "totalAmount": 27.830000000000002,
+      "id": 3
+    },
+    {
+      "items": [
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 1,
+          "price": 21.85
+        },
+        {
+          "id": "t4",
+          "name": "Lavash",
+          "amount": 1,
+          "price": 5.98
+        }
+      ],
+      "totalAmount": 27.830000000000002,
+      "id": 4
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        }
+      ],
+      "totalAmount": 28.1,
+      "id": 5
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        }
+      ],
+      "totalAmount": 28.1,
+      "id": 6
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        }
+      ],
+      "totalAmount": 13.97,
+      "id": 7
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        }
+      ],
+      "totalAmount": 13.97,
+      "id": 8
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        }
+      ],
+      "totalAmount": 13.97,
+      "id": 9
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        }
+      ],
+      "totalAmount": 13.97,
+      "id": 10
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        },
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 3,
+          "price": 21.85
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        }
+      ],
+      "totalAmount": 93.65,
+      "userData": {},
+      "id": 11
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        },
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 1,
+          "price": 21.85
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        }
+      ],
+      "totalAmount": 49.95,
+      "userData": {},
+      "id": 12
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        },
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 1,
+          "price": 21.85
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        },
+        {
+          "id": "t4",
+          "name": "Lavash",
+          "amount": 1,
+          "price": 5.98
+        }
+      ],
+      "totalAmount": 55.93000000000001,
+      "userData": {},
+      "id": 13
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 2,
+          "price": 13.97
+        },
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 2,
+          "price": 21.85
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        },
+        {
+          "id": "t4",
+          "name": "Lavash",
+          "amount": 1,
+          "price": 5.98
+        }
+      ],
+      "totalAmount": 91.75,
+      "userData": {
+        "name": "Kesha2",
+        "email": "jeff@uslfreight.com",
+        "phone": "+380676733950",
+        "address": ""
+      },
+      "id": 14
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 2,
+          "price": 13.97
+        },
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 3,
+          "price": 21.85
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        }
+      ],
+      "totalAmount": 107.62,
+      "userData": {},
+      "id": 15
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 2,
+          "price": 13.97
+        },
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 3,
+          "price": 21.85
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        }
+      ],
+      "totalAmount": 107.62,
+      "userData": {
+        "name": "Oleh",
+        "email": "babiak",
+        "phone": "",
+        "address": ""
+      },
+      "id": 16
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        },
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 1,
+          "price": 21.85
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        }
+      ],
+      "totalAmount": 49.95,
+      "userData": {
+        "name": "asaddsafdsa",
+        "email": "dmccarley@ltblogistics.com",
+        "phone": "+380676733950",
+        "address": ""
+      },
+      "id": 17
+    },
+    {
+      "items": [
+        {
+          "id": "t1",
+          "name": "Shahlyk",
+          "amount": 1,
+          "price": 13.97
+        },
+        {
+          "id": "t2",
+          "name": "Hachapuri",
+          "amount": 1,
+          "price": 21.85
+        },
+        {
+          "id": "t3",
+          "name": "Kebab",
+          "amount": 1,
+          "price": 14.13
+        }
+      ],
+      "totalAmount": 49.95,
+      "userData": {
+        "name": "asaddsafdsa",
+        "email": "jeff@uslfreight.com",
+        "phone": "",
+        "address": ""
+      },
+      "id": 18
+    },
+    {
+      "items": [
+        {
+          "id": "b1",
+          "name": "Holodec",
+          "amount": 2,
+          "price": 16.44
+        },
+        {
+          "id": "b2",
+          "name": "Krovianka",
+          "amount": 2,
+          "price": 22.32
+        },
+        {
+          "id": "b3",
+          "name": "Salo z chasnykom",
+          "amount": 1,
+          "price": 11.98
+        },
+        {
+          "id": "b4",
+          "name": "Solinnja",
+          "amount": 1,
+          "price": 17.55
+        }
+      ],
+      "totalAmount": 107.05000000000001,
+      "userData": {
+        "name": "Nastia",
+        "email": "Nastya@gmail.com",
+        "phone": "+380676733950",
+        "address": ""
+      },
+      "id": 19
+    },
+    {
+      "items": [
+        {
+          "id": "b3",
+          "name": "Salo z chasnykom",
+          "amount": 1,
+          "price": 11.98
+        },
+        {
+          "id": "b4",
+          "name": "Solinnja",
+          "amount": 1,
+          "price": 17.55
+        },
+        {
+          "id": "b1",
+          "name": "Holodec",
+          "amount": 1,
+          "price": 16.44
+        }
+      ],
+      "totalAmount": 45.97,
+      "userData": {
+        "name": "Kesha2",
+        "email": "craigeller@trucktca.com",
+        "phone": "+380676733950",
+        "address": "Цент"
+      },
+      "id": 20
     }
   ]
 }

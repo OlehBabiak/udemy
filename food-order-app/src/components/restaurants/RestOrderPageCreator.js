@@ -12,10 +12,8 @@ const RestOrderPageCreator = ({path}) => {
 	const foodAppService = new FoodAppService()
 	
 	const errorMessage = error ? <ErrorMessage /> : null;
-	const spinner = !loading ? <Spinner /> : null;
+	const spinner = loading ? <Spinner /> : null;
 	const content = !(loading || error) ? <Meals menu={macMenu}/>: null
-	
-	console.log(macMenu)
 	
 	function onMenuLoaded(menu) {
 		setMacMenu(menu)
@@ -34,9 +32,11 @@ const RestOrderPageCreator = ({path}) => {
 		onMenuLoading()
 		foodAppService.getRestMenu(path).then(onMenuLoaded).catch(onError)
 	}
+	
 	useEffect(()=>{
 		getMacMenu()
 	}, [])
+	
 	return(
 		<Fragment>
 			{errorMessage}

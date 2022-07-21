@@ -25,6 +25,21 @@ class FoodAppService {
 			id: res.id,
 		};
 	};
+	
+	postResource = async (url, data) => {
+		const res = await fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-type": "application/json",
+			},
+			body: data,
+		});
+		return await res.json();
+	};
+	
+	postRestOrder = async (data) => {
+		return await this.postResource(`${ this._apiBase }/requests`, data)
+	}
 }
 
 export default FoodAppService
