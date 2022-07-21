@@ -1,40 +1,43 @@
 import Meals from "../Meals/Meals";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import FoodAppService from "../services/FoodAppService";
 import ErrorMessage from "../errorMessage/errorMessage";
 import Spinner from "../spinner/Spinner";
+import Context from "../../store/cart-context";
 
 
 const RestOrderPageCreator = ({path}) => {
-	const [macMenu, setMacMenu] = useState([]);
-	const [error, setError] = useState(false);
-	const [loading, setLoading] = useState(false);
+	const [menu, setMenu] = useState([]);
+
 	const foodAppService = new FoodAppService()
+	const errorMessageContent = 'Вибачте, сторінка не доступна!'
+	const {cartContext} = useContext(Context);
 	
-	const errorMessage = error ? <ErrorMessage /> : null;
-	const spinner = loading ? <Spinner /> : null;
-	const content = !(loading || error) ? <Meals menu={macMenu}/>: null
+	const errorMessage = cartContext.loadState.error ? <ErrorMessage content={errorMessageContent} /> : null;
+	const spinner = cartContext.loadState.loading && !cartContext.loadState.error ? <Spinner /> : null;
+	const content = !(cartContext.loadState.loading || cartContext.loadState.error) ? <Meals menu={menu}/>: null
 	
-	function onMenuLoaded(menu) {
-		setMacMenu(menu)
-		setLoading(false);
+	const onMenuLoaded=(menu) => {
+		setMenu(menu)
+		cartContext.changeLoad(false)
 	}
 	
-	function onMenuLoading() {
-		setLoading(true);
+	const onMenuLoading=() => {
+		cartContext.changeLoad(true)
 	}
 	
-	function onError() {
-		setError(true);
+	const onError=() => {
+		cartContext.changeErrState(true)
 	}
 	
-	function getMacMenu() {
+	const getMenu=() => {
 		onMenuLoading()
 		foodAppService.getRestMenu(path).then(onMenuLoaded).catch(onError)
 	}
 	
 	useEffect(()=>{
-		getMacMenu()
+		
+		getMenu()
 	}, [])
 	
 	return(

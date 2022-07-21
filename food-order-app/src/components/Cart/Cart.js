@@ -6,9 +6,16 @@ import CartItem from "./CartItem";
 import CartInput from "./CartInput";
 import FoodAppService from "../services/FoodAppService";
 
+const INIT_VALUE = {
+	name: '',
+	email: '',
+	phone: '',
+	address: ''
+};
 
 const Cart = ( {onCloseCart} ) => {
 	const {cartContext} = useContext(Context);
+	const [form, setForm] = useState(INIT_VALUE);
 	const totalAmount = `$${ cartContext.totalAmount.toFixed(2) }`
 	const hasItems = cartContext.items.length > 0
 	const foodAppService = new FoodAppService()
@@ -20,16 +27,7 @@ const Cart = ( {onCloseCart} ) => {
 		cartContext.addItem({...item, amount: 1})
 	}
 	
-	const initValue = {
-		name: '',
-		email: '',
-		phone: '',
-		address: ''
-	};
-	
-	const [form, setForm] = useState(initValue);
-	
-	function onValueChange( e ) {
+	const onValueChange = ( e ) => {
 		setForm({
 			...form,
 			[e.target.name]: e.target.value,
@@ -38,9 +36,11 @@ const Cart = ( {onCloseCart} ) => {
 	}
 	
 	
-	function addData() {
+	const addData = () => {
 		const json = JSON.stringify(cartContext.order);
-		foodAppService.postRestOrder(json).then(res => console.log(res))
+		foodAppService.postRestOrder(json)
+			.then(res => console.log(res))
+			.catch(err => console.error(err))
 		cartContext.clearState()
 		onCloseCart()
 	}

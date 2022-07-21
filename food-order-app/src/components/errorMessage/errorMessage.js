@@ -1,11 +1,11 @@
 import Card from "../UI/Card";
 import classes from './errorMessage.module.css'
 
-const ErrorMessage = () => {
+const ErrorMessage = ({content}) => {
 	return (
 		<Card>
 			<h2 className={ classes.error }>
-				Вибачте, сторінка не доступна
+				{ content }
 			</h2>
 		</Card>
 	)
