@@ -43,7 +43,8 @@ const Cart = ( {onCloseCart, onShowCard} ) => {
 		onShowCard(true, content)
 	}
 	
-	const addData = () => {
+	const submit = (e) => {
+		e.preventDefault()
 		const json = JSON.stringify(cartContext.order);
 		foodAppService.postRestOrder(json)
 			.then(data =>{
@@ -60,6 +61,7 @@ const Cart = ( {onCloseCart, onShowCard} ) => {
 			{
 				cartContext.items.map(item =>
 					<CartItem
+						item={item}
 						key={ item.id }
 						name={ item.name }
 						price={ item.price }
@@ -72,7 +74,8 @@ const Cart = ( {onCloseCart, onShowCard} ) => {
 	
 	return (
 		<Modal onClose={ onCloseCart }>
-			<CartInput
+			<form onSubmit={submit}>
+				<CartInput
 				input={ {
 					type: 'text',
 					placeholder: 'Name',
@@ -81,42 +84,43 @@ const Cart = ( {onCloseCart, onShowCard} ) => {
 				} }
 				onValueChange={ onValueChange }
 			/>
-			<CartInput
-				input={ {
-					type: 'email',
-					placeholder: 'Email',
-					name: 'email',
-					value: form.email
-				} }
-				onValueChange={ onValueChange }
-			/>
-			<CartInput
-				input={ {
-					type: 'phone',
-					placeholder: 'Phone',
-					name: 'phone',
-					value: form.phone
-				} }
-				onValueChange={ onValueChange }
-			/>
-			<CartInput
-				input={ {
-					type: 'address',
-					placeholder: 'Address',
-					name: 'address',
-					value: form.address
-				} }
-				onValueChange={ onValueChange }
-			/>
-			{ cartItems }
-			<div className={ classes.total }>
-				<span>Total Amount</span>
-				<span>{ totalAmount }</span>
-			</div>
-			<div className={ classes.actions }>
-				<button onClick={ onCloseCart } className={ classes['button--alt'] }>Close</button>
-				{ hasItems && <button onClick={ addData } className={ classes.button }>Order</button> }
-			</div>
+				<CartInput
+					input={ {
+						type: 'email',
+						placeholder: 'Email',
+						name: 'email',
+						value: form.email
+					} }
+					onValueChange={ onValueChange }
+				/>
+				<CartInput
+					input={ {
+						type: 'phone',
+						placeholder: 'Phone',
+						name: 'phone',
+						value: form.phone
+					} }
+					onValueChange={ onValueChange }
+				/>
+				<CartInput
+					input={ {
+						type: 'address',
+						placeholder: 'Address',
+						name: 'address',
+						value: form.address
+					} }
+					onValueChange={ onValueChange }
+				/>
+				{ cartItems }
+				<div className={ classes.total }>
+					<span>Total Amount</span>
+					<span>{ totalAmount }</span>
+				</div>
+				<div className={ classes.actions }>
+					<button onClick={ onCloseCart } className={ classes['button--alt'] }>Close</button>
+					{ hasItems && <button type={"submit"} className={ classes.button }>Order</button> }
+				</div>
+			</form>
 		</Modal>
 	);
 }
