@@ -6,7 +6,7 @@ import Spinner from "../spinner/Spinner";
 import Context from "../../store/cart-context";
 
 
-const RestOrderPageCreator = ({path, mealSumPath}) => {
+const RestOrderPageCreator = ({path}) => {
 	const [menu, setMenu] = useState([]);
 	const [summary, setSummary] = useState('');
 
