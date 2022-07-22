@@ -1,18 +1,12 @@
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
 import MealsSummary from "./MealsSummary";
 import AvailableMeals from "./AvailableMeals";
-import classes from './Meals.module.css'
-import Context from "../../store/cart-context";
 
-const Meals = ({menu}) => {
-    const {cartContext}=useContext(Context);
-    const isDark = cartContext.isThemeDark
-    const lightClasses=`${classes.dark} ${isDark ? classes.light : ''}`;
-
+const Meals = ({menu, summary}) => {
     return (
        <Fragment>
-           <div className={lightClasses}>
-               <MealsSummary/>
+           <div>
+               <MealsSummary summary={summary}/>
                <AvailableMeals menu={menu}/>
            </div>
        </Fragment>

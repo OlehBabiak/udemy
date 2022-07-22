@@ -5,7 +5,7 @@ import RestOrderPageCreator from "./restaurants/RestOrderPageCreator";
 const RoutesComp = () => {
 	return (
 		<Routes>
-			<Route path="/mac" element={<RestOrderPageCreator path={ 'mac' } />}>
+			<Route path="/mac" element={<RestOrderPageCreator path={ 'mac' }/>}>
 			</Route>
 			<Route path="/kfc" element={<RestOrderPageCreator path={ 'kfc' } />}>
 			</Route>

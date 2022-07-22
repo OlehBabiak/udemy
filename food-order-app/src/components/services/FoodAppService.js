@@ -13,11 +13,18 @@ class FoodAppService {
 		const res = await this.getResource(
 			`${ this._apiBase }/${ end }`
 		);
-		return res.map(el => this._transformCharacter(el));
+		return res.menu.map(el => this._transformCharacter(el));
+	};
+	
+	getSummary = async ( end ) => {
+		const res =  await this.getResource(
+			`${ this._apiBase }/${ end }`
+		);
+		return res.summary
 	};
 	
 	_transformCharacter = ( res ) => {
-		//отрримуєм обєкт тільки з потрібними полями
+		//отрримуєм обєкт тільки з потрібними полями якщо у вхідному масиві їх більше ніж потрібно
 		return {
 			name: res.name,
 			description: res.description,

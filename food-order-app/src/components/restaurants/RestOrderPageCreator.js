@@ -6,8 +6,9 @@ import Spinner from "../spinner/Spinner";
 import Context from "../../store/cart-context";
 
 
-const RestOrderPageCreator = ({path}) => {
+const RestOrderPageCreator = ({path, mealSumPath}) => {
 	const [menu, setMenu] = useState([]);
+	const [summary, setSummary] = useState('');
 
 	const foodAppService = new FoodAppService()
 	const errorMessageContent = 'Вибачте, сторінка не доступна!'
@@ -15,10 +16,15 @@ const RestOrderPageCreator = ({path}) => {
 	
 	const errorMessage = cartContext.loadState.error ? <ErrorMessage content={errorMessageContent} /> : null;
 	const spinner = cartContext.loadState.loading && !cartContext.loadState.error ? <Spinner /> : null;
-	const content = !(cartContext.loadState.loading || cartContext.loadState.error) ? <Meals menu={menu}/>: null
+	const content = !(cartContext.loadState.loading || cartContext.loadState.error) ? <Meals menu={menu} summary={summary}/>: null
 	
 	const onMenuLoaded=(menu) => {
 		setMenu(menu)
+		cartContext.changeLoad(false)
+	}
+	
+	const onSummaryLoaded=(sum) => {
+		setSummary(sum)
 		cartContext.changeLoad(false)
 	}
 	
@@ -35,9 +41,15 @@ const RestOrderPageCreator = ({path}) => {
 		foodAppService.getRestMenu(path).then(onMenuLoaded).catch(onError)
 	}
 	
+	const getMealsSummary=() => {
+		onMenuLoading()
+		foodAppService.getSummary(path).then(onSummaryLoaded).catch(onError)
+	}
+	
 	useEffect(()=>{
-		
 		getMenu()
+		getMealsSummary();
+		
 	}, [])
 	
 	return(
