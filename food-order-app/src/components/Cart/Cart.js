@@ -14,7 +14,7 @@ const INIT_VALUE = {
 };
 
 const thanksContent = 'Дякуємо, Ваше замовлення прийняте, очікуйте дзвінка :)'
-const errorContent = 'Вибачте, щось пішло не такб спробуйте пізніше'
+const errorContent = 'Вибачте, щось пішло не так, спробуйте пізніше'
 
 const Cart = ( {onCloseCart, onShowCard} ) => {
 	const {cartContext} = useContext(Context);

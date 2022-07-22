@@ -18,9 +18,9 @@ function App() {
 	const thanksCardHandler = ( val, message ) => {
 		setThanksModalCardIsVisible(val)
 		setContent(message)
-		// setTimeout(() => {
-		// 	setThanksModalCardIsVisible(false)
-		// }, 4000)
+		setTimeout(() => {
+			setThanksModalCardIsVisible(false)
+		}, 4000)
 	}
 	
 	return (
