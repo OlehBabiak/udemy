@@ -13,7 +13,10 @@ const INIT_VALUE = {
 	address: ''
 };
 
-const Cart = ( {onCloseCart} ) => {
+const thanksContent = 'Дякуємо, Ваше замовлення прийняте, очікуйте дзвінка :)'
+const errorContent = 'Вибачте, щось пішло не такб спробуйте пізніше'
+
+const Cart = ( {onCloseCart, onShowCard} ) => {
 	const {cartContext} = useContext(Context);
 	const [form, setForm] = useState(INIT_VALUE);
 	const totalAmount = `$${ cartContext.totalAmount.toFixed(2) }`
@@ -35,15 +38,18 @@ const Cart = ( {onCloseCart} ) => {
 		cartContext.addUserData(form)
 	}
 	
-	const localSetHandler = (order) => {
-		localStorage.setItem('order', JSON.stringify(order))
+	const localSetHandler = (order, content) => {
+		localStorage.setItem('order', JSON.stringify(order));
+		onShowCard(true, content)
 	}
 	
 	const addData = () => {
 		const json = JSON.stringify(cartContext.order);
 		foodAppService.postRestOrder(json)
-			.then(localSetHandler)
-			.catch(err => console.error(err))
+			.then(data =>{
+				localSetHandler(data, thanksContent)
+			})
+			.catch(onShowCard(true, errorContent))
 		cartContext.clearState()
 		onCloseCart()
 	}

@@ -34,6 +34,10 @@ class FoodAppService {
 			},
 			body: data,
 		});
+		if (!res.ok) {
+			throw new Error(`Could not fetch ${ url }, status: ${ res.status }`);
+		}
+		console.log('postRes ', res)
 		return await res.json();
 	};
 	
